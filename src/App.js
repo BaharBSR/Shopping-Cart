@@ -4,6 +4,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 //components
 import Store from './component/Store';
 import ProductDetails from './component/ProductDetails';
+import Navbar from './component/shared/Navbar';
 
 //context
 import ProductsContextProvider from './context/ProductsContextProvider';
@@ -15,6 +16,7 @@ const App = () => {
     <div>
       <ProductsContextProvider>
         <CartContextProvider>
+          <Navbar /> 
           <Switch>
             <Route path='/products/:id' component={ProductDetails} />
             <Route path='/products' component={Store} />
